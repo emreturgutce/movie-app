@@ -120,6 +120,7 @@ const HomeContainer = ({ navigation }) => {
                 width: "100%",
                 borderBottomColor: "#707070",
                 borderBottomWidth: 1,
+                marginTop: 16,
               }}
             >
               <Text
@@ -135,7 +136,7 @@ const HomeContainer = ({ navigation }) => {
                 Upcoming
               </Text>
             </View>
-            <View style={{ width: "100%", height: 150, marginTop: 32 }}>
+            <View style={{ width: "100%", height: 150, marginTop: 48 }}>
               {loading ? (
                 <ActivityIndicator />
               ) : (

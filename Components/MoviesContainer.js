@@ -60,8 +60,8 @@ const MoviesContainer = ({ navigation, listType, input }) => {
     }
   };
   const fetchSearchedMovie = async () => {
-    const text = input.toString("%20");
-    const URL = `https://api.themoviedb.org/3/search/movie?api_key=4655f3c5728527a96ab8a6642dac3a6f&language=en-US&query=${text}page=1&include_adult=false`;
+    const text = input;
+    const URL = `https://api.themoviedb.org/3/search/movie?api_key=4655f3c5728527a96ab8a6642dac3a6f&language=en-US&query=${text}&page=1&include_adult=false`;
     const response = await fetch(URL);
     const json = await response.json();
     setMoviesInfo(json.results);

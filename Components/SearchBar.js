@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TextInput, Button } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const SearchBar = ({ navigation }) => {
   const [input, setInput] = useState("");
   const handleButtonPressed = () => {
     navigation.navigate("Movies", { listType: "Search Movie", input });
+    setInput("");
   };
   return (
     <View
@@ -21,7 +22,6 @@ const SearchBar = ({ navigation }) => {
     >
       <Icon name="search" color="#000000" size={24} />
       <TextInput
-        onKeyPress={handleKeyPress}
         placeholder="Search Movie"
         value={input}
         onChangeText={(text) => setInput(text)}

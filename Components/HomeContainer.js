@@ -71,7 +71,10 @@ const HomeContainer = ({ navigation }) => {
             >
               <Button
                 onPress={() =>
-                  navigation.navigate("Movies", { listType: "Top Rated" })
+                  navigation.navigate("Movies", {
+                    listType: "Top Rated",
+                    title: "Top Rated Movies",
+                  })
                 }
                 title="Top Rated"
                 color="#444"
@@ -86,7 +89,10 @@ const HomeContainer = ({ navigation }) => {
               />
               <Button
                 onPress={() =>
-                  navigation.navigate("Movies", { listType: "Most Popular" })
+                  navigation.navigate("Movies", {
+                    listType: "Most Popular",
+                    title: "Most Popular Movies",
+                  })
                 }
                 title="Most Popular"
                 color="#444"
@@ -101,7 +107,10 @@ const HomeContainer = ({ navigation }) => {
               />
               <Button
                 onPress={() =>
-                  navigation.navigate("Movies", { listType: "Now Playing" })
+                  navigation.navigate("Movies", {
+                    listType: "Now Playing",
+                    title: "Now Playing Movies",
+                  })
                 }
                 title="Now Playing"
                 color="#444"

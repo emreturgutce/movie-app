@@ -5,7 +5,11 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const SearchBar = ({ navigation }) => {
   const [input, setInput] = useState("");
   const handleButtonPressed = () => {
-    navigation.navigate("Movies", { listType: "Search Movie", input });
+    navigation.navigate("Movies", {
+      listType: "Search Movie",
+      input,
+      title: input,
+    });
     setInput("");
   };
   return (

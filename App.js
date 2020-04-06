@@ -13,9 +13,48 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Movies" component={MoviesScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Home"
+          options={{
+            title: "Movie App",
+            headerStyle: {
+              backgroundColor: "#888",
+            },
+            headerTintColor: "#EEE",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name="Movies"
+          options={({ route }) => ({
+            title: route.params.name,
+            headerStyle: {
+              backgroundColor: "#888",
+            },
+            headerTintColor: "#EEE",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          })}
+          component={MoviesScreen}
+        />
+        <Stack.Screen
+          name="Details"
+          options={({ route }) => ({
+            title: route.params.name,
+            headerStyle: {
+              backgroundColor: "#888",
+            },
+            headerTintColor: "#EEE",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          })}
+          component={DetailsScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

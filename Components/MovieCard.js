@@ -10,7 +10,10 @@ import {
 
 const MovieCard = ({ movieInfo, navigation }) => {
   const onPressCardHandler = () => {
-    navigation.navigate("Details", { id: movieInfo.id });
+    navigation.navigate("Details", {
+      id: movieInfo.id,
+      title: movieInfo.title,
+    });
   };
   const setOpacity = () => {
     if (movieInfo.backgroundImageURL) {

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const SearchBar = ({ onPressHandler }) => {
+const SearchBar = ({ navigation }) => {
+  const [input, setInput] = useState("");
+  const handleButtonPressed = () => {
+    navigation.navigate("Movies", { listType: "Search Movie", input });
+  };
   return (
     <View
       style={{
@@ -17,17 +21,26 @@ const SearchBar = ({ onPressHandler }) => {
     >
       <Icon name="search" color="#000000" size={24} />
       <TextInput
+        onKeyPress={handleKeyPress}
+        placeholder="Search Movie"
+        value={input}
+        onChangeText={(text) => setInput(text)}
         style={{
           flex: 1,
           color: "#444",
           paddingHorizontal: 18,
           fontSize: 22,
         }}
-        placeholder="Search Movie"
       />
-      <TouchableOpacity onPress={onPressHandler}>
-        <Icon name="bars" color="#000000" size={24} />
-      </TouchableOpacity>
+      <Button
+        onPress={handleButtonPressed}
+        title="Search"
+        color="#888"
+        style={{
+          color: "#FFF",
+        }}
+        accessibilityLabel="Learn more about this purple button"
+      />
     </View>
   );
 };
